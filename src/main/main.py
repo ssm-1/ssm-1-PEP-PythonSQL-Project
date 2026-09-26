@@ -76,7 +76,7 @@ def load_and_clean_call_logs(file_path):
         next(reader)
 
         for row in reader: 
-            if len(row) == 2 and row[0].strip() != "" and row[1].strip() !="" and row[2].strip() !="" and row[3].strip() !=""and row[4].strip() !="":
+            if len(row) == 5 and row[0].strip() != "" and row[1].strip() !="" and row[2].strip() !="" and row[3].strip() !=""and row[4].strip() !="":
                 phoneNumber, startTime, endTime, direction, userId = row
                 cursor.execute('''INSERT INTO users (phoneNumber, startTime, endTime, direction, userId)
                 VALUES(?, ?, ?, ?, ?);''',
