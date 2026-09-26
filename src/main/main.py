@@ -53,13 +53,14 @@ def main():
 
 # This function will load the users.csv file into the users table, discarding any records with incomplete data
 def load_and_clean_users(file_path):
+    row = userId, firstName, lastName
     with open(file_path, "r") as file: 
         reader = csv.reader(file)
 
         for row in reader: 
-            if len(row) == 3:
+            if len(row) == 3 and "" != in row:
                 cursor.execute('''INSERT INTO users
-                VALUES(?, ?, ?);'''), (userId, firstName, lastName)
+                VALUES(?, ?, ?);''' (userId, firstName, lastName))
             else: 
                 pass
 
