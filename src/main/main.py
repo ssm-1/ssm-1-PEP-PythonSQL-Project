@@ -110,10 +110,10 @@ def write_ordered_calls(csv_file_path):
         ORDER BY userId, startTime
         ''')
     results = cursor.fetchall()
-    with open(csv_file_path, "w", newline=",") as file: 
+    with open(csv_file_path, "w", newline="") as file: 
         writer = csv.writer(file)
         writer.writerow(["userId", "startTime"])
-        writer.writerow(results)
+        writer.writerows(results)
 
 
 
