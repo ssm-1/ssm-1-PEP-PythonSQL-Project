@@ -96,7 +96,7 @@ def write_user_analytics(csv_file_path):
     GROUP BY userId
     ''')
     results = cursor.fetchall()
-    with open(csv_file_path, "w", newLine="") as file: 
+    with open(csv_file_path, "w", newline="") as file: 
         writer = csv.writer(file)
         writer.writerow(["userId", "avgDuration", "numCalls"])
         writer.writerow(results)
@@ -110,7 +110,7 @@ def write_ordered_calls(csv_file_path):
         ORDER BY userId, startTime
         ''')
     results = cursor.fetchall()
-    with open(csv_file_path, "w", newLine="") as file: 
+    with open(csv_file_path, "w", newline="") as file: 
         writer = csv.writer(file)
         writer.writerow(["userId", "startTime"])
         writer.writerow(results)
