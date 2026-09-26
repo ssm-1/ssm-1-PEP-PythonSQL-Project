@@ -57,8 +57,8 @@ def load_and_clean_users(file_path):
         reader = csv.reader(file)
 
         for row in reader: 
-            firstName, lastName = row
             if len(row) == 2 and "" not in row:
+                firstName, lastName = row
                 cursor.execute('''INSERT INTO users (firstName, lastName)
                 VALUES(?, ?);''',
                 (firstName, lastName))
