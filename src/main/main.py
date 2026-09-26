@@ -60,7 +60,8 @@ def load_and_clean_users(file_path):
             firstName, lastName = row
             if len(row) == 2 and "" not in row:
                 cursor.execute('''INSERT INTO users
-                VALUES(?, ?, ?);''' (firstName, lastName))
+                VALUES(?, ?, ?);''',
+                (firstName, lastName))
             else: 
                 pass
 
